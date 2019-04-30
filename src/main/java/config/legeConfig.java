@@ -4,9 +4,10 @@
  *
  *
  */
+package config;
 
 
-public class tempTest {
+public class legeConfig {
 
 
 }
