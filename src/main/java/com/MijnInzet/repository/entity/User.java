@@ -4,9 +4,10 @@
  *
  *
  */
+package com.MijnInzet.repository.entity;
 
 
-public class tempClass3 {
+public class User {
 
 
 }
