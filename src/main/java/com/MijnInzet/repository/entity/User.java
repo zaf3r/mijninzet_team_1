@@ -8,6 +8,7 @@ package com.MijnInzet.repository.entity;
 
 
 public class User {
+    
 
 
 }
