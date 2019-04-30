@@ -4,9 +4,10 @@
  *
  *
  */
+package com.MijnInzet.controller;
 
 
-public class tempClass2 {
+public class Welkom {
 
 
 }
