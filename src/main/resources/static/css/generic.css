@@ -1,17 +1,33 @@
 body {
-        background-color: lavender;
+    background: #43cea2;
+    background: -webkit-linear-gradient(to right, #185a9d, #43cea2);
+    background: linear-gradient(to right, #185a9d, #43cea2);
+    color: #fff;
+    text-align: center;
+}
 
-}
-#parent {
-    padding: 10% 0;
-}
-#child {
-    font-size: 3em;
+.page-content {
+    position: absolute;
     text-align: center;
-    padding: 10% 0;
+    left: 0;
+    right: 0;
+    top: 35%;
+    bottom: 0;
 }
-#child2 {
-    font-size: 1em;
-    text-align: center;
-    padding: 10% 0;
+
+h1 {
+    font-size: 46px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 46px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+h3 {
+    font-size: 35px;
+    margin-top: 40px;
+    margin-bottom: 10px;
 }
