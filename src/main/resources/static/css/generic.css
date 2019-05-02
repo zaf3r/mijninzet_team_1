@@ -1,0 +1,17 @@
+body {
+        background-color: lavender;
+
+}
+#parent {
+    padding: 10% 0;
+}
+#child {
+    font-size: 3em;
+    text-align: center;
+    padding: 10% 0;
+}
+#child2 {
+    font-size: 1em;
+    text-align: center;
+    padding: 10% 0;
+}
