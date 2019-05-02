@@ -4,7 +4,7 @@
  *
  *
  */
-package controller;
+package makeitwork.mijninzet.controller;
 
 
 public class legeController {

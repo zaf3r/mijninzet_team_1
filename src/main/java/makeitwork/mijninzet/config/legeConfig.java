@@ -4,10 +4,10 @@
  *
  *
  */
-package model;
+package makeitwork.mijninzet.config;
 
 
-public class legeModel {
+public class legeConfig {
 
 
 }
