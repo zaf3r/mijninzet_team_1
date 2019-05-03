@@ -27,6 +27,9 @@ public class HomeController {
         model.addAttribute("title", appName);
         model.addAttribute("team", teamLeden);
         return "home";
-
+    }
+    @GetMapping("/addUser")
+    public String addUser(Model model){
+        return "addUser";
     }
 }

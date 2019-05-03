@@ -1,4 +1,5 @@
 body {
+    font-family: "Times New Roman", Times, sans-serif;
     background: #43cea2;
     background: -webkit-linear-gradient(to right, #185a9d, #43cea2);
     background: linear-gradient(to right, #185a9d, #43cea2);
@@ -30,4 +31,25 @@ h3 {
     font-size: 35px;
     margin-top: 40px;
     margin-bottom: 10px;
+}
+input:focus{
+    border:2px solid
+}
+input[type=submit]{
+    background-color:lightgrey;
+    border-radius: 4px;
+    collapse: true;
+    cursor: pointer;
+}
+input[type=reset]{
+    background-color:lightgrey;
+    border-radius: 4px;
+    collapse: true;
+    cursor: pointer;
+}
+input[type=button]{
+    background-color:lightgrey;
+    border-radius: 4px;
+    collapse: true;
+    cursor: pointer;
 }

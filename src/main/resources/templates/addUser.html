@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<link rel="stylesheet" type="text/css" th:href="@{/css/generic.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/user.css}"/>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="page-content">
+    <form>
+        <label for="gebruiker">gebruikernaam</label>
+        <input type="text" id="gebruiker" name="gebruiker" th:placeholder="gebruikersnaam"><br>
+        <label for="vnaam">voornaam</label>
+        <input type="text" id="vnaam" name="vnaam"><br>
+        <label for="voorvoegsel">voorvoegsel(s)</label>
+        <input type="text" id="voorvoegsel" name="voorvoegsel"><br>
+        <label for="anaam">achternaam</label>
+        <input type="text" id="anaam" name="anaam"><br>
+        <label for="email">email</label>
+        <input type="email" id="email" name="email"><br>
+        <label for="pwd">password</label>
+        <input type="password" id="pwd" name="pwd"><br>
+        <input type="checkbox" name="juiste_gegevens" value=" Alle gegevens zijn juist">Alle gegevens zijn juist
+    </form>
+</div>
+
+</body>
+</html>
