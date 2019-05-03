@@ -30,6 +30,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
 
+
+    //Right now any authorized user can access any page, structure to be added
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
@@ -40,6 +42,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .formLogin().permitAll();
     }
 
+    //Password encoder to be added, right now passwords are stored as plain text
     private PasswordEncoder getPasswordEncoder() {
         return new PasswordEncoder() {
             @Override
