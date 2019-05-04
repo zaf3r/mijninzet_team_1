@@ -1,21 +1,32 @@
 package makeitwork.mijninzet.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
 @Table(name = "gebruiker")
 public class User {
 
+    private final String VERPLICHT=" is een verplicht veld";
+    private final int MIN_PWD=8;
+    private final String COLUMN_PASSWORD="wachtwoord";
+    private final String COLUMN_USERNAME="gebruikersnaam";
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "idgebruiker")
     private int id;
 
-    @Column(name = "wachtwoord")
+    @NotNull(message=COLUMN_PASSWORD+VERPLICHT)
+    @Size(min=MIN_PWD, message= "minimale lengte van een password is "+MIN_PWD)
+    @Column(name = COLUMN_PASSWORD)
     private String password;
 
-    @Column(name = "gebruikersnaam")
+    @NotNull(message=COLUMN_USERNAME+VERPLICHT)
+    @Column(name = COLUMN_USERNAME)
     private String username;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
