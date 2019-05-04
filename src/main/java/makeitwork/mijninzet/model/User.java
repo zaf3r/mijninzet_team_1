@@ -28,6 +28,9 @@ public class User {
     @Transient
     private final String COLUMN_ID = "idgebruiker";
 
+    @Transient
+    private final String COLUMN_ACTIVE = "actief";
+
     //Constant variables that represent other table names/columns
     @Transient
     private final String JOINT_TABLE_NAME = "rollen_gebruiker";
@@ -51,6 +54,11 @@ public class User {
     @Column(name = COLUMN_USERNAME)
     private String username;
 
+    @NotNull(message = COLUMN_ACTIVE+VERPLICHT)
+    @Column(name = COLUMN_ACTIVE)
+    private int active;
+
+
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = JOINT_TABLE_NAME,
             joinColumns = @JoinColumn(name = COLUMN_ID),
@@ -65,6 +73,7 @@ public class User {
         this.username = user.getUsername();
         this.id = user.getId();
         this.password = user.getPassword();
+        this.active = user.getActive();
     }
 
     public int getId() {
@@ -97,5 +106,13 @@ public class User {
 
     public void setRole(List<Role> role) {
         this.role = role;
+    }
+
+    public int getActive() {
+        return active;
+    }
+
+    public void setActive(int active) {
+        this.active = active;
     }
 }
