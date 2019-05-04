@@ -10,11 +10,33 @@ import java.util.List;
 @Table(name = "gebruiker")
 public class User {
 
+    //Validation fields
+    @Transient
     private final String VERPLICHT=" is een verplicht veld";
+
+    @Transient
     private final int MIN_PWD=8;
+
+
+    //Column names of entity
+    @Transient
     private final String COLUMN_PASSWORD="wachtwoord";
+
+    @Transient
     private final String COLUMN_USERNAME="gebruikersnaam";
 
+    @Transient
+    private final String COLUMN_ID = "idgebruiker";
+
+    //Constant variables that represent other table names/columns
+    @Transient
+    private final String JOINT_TABLE_NAME = "rollen_gebruiker";
+
+    @Transient
+    private final String PK_COLUMN_OTHER_ENTITY = "rol_id";
+
+
+    //Fields that are mapped by Hibernate
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "idgebruiker")
@@ -30,7 +52,9 @@ public class User {
     private String username;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinTable(name = "rollen_gebruiker", joinColumns = @JoinColumn(name = "idgebruiker"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
+    @JoinTable(name = JOINT_TABLE_NAME,
+            joinColumns = @JoinColumn(name = COLUMN_ID),
+            inverseJoinColumns = @JoinColumn(name = PK_COLUMN_OTHER_ENTITY))
     private List<Role> role;
 
     public User() {
