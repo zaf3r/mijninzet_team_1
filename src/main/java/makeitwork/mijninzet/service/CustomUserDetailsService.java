@@ -1,6 +1,6 @@
 package makeitwork.mijninzet.service;
 
-import makeitwork.mijninzet.controller.UserDetailsImp;
+import makeitwork.mijninzet.model.UserDetailsImp;
 import makeitwork.mijninzet.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

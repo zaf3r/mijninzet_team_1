@@ -27,7 +27,7 @@ GRANT ALL PRIVILEGES ON * . * TO 'Umaster'@'localhost';
 CREATE TABLE IF NOT EXISTS `MijnInzet`.`Gebruiker` (
   `idGebruiker` INT NOT NULL,
   `gebruikersnaam` VARCHAR(45) NOT NULL,
-  `wachtwoord` CHAR(15) NOT NULL,
+  `wachtwoord` CHAR(200) NOT NULL,
   `actief` TINYINT(1) NOT NULL,
   PRIMARY KEY (`idGebruiker`))
 ENGINE = InnoDB;
@@ -35,7 +35,7 @@ ENGINE = InnoDB;
 INSERT INTO `mijninzet`.`gebruiker` (`idGebruiker`, `gebruikersnaam`, `wachtwoord`,`actief`) VALUES ('1', 'TheBoss', 'x','1');
 INSERT INTO `mijninzet`.`gebruiker` (`idGebruiker`, `gebruikersnaam`, `wachtwoord`,`actief`) VALUES ('2', 'TheTeacher', 'x','1');
 INSERT INTO `mijninzet`.`gebruiker` (`idGebruiker`, `gebruikersnaam`, `wachtwoord`,`actief`) VALUES ('3', 'capo di tutti capi', 'x','1');
-INSERT INTO `mijninzet`.`gebruiker` (`idGebruiker`, `gebruikersnaam`, `wachtwoord`,`actief`) VALUES ('4', 'WillNeverBeActive', 'x','0');
+INSERT INTO `mijninzet`.`gebruiker` (`idGebruiker`, `gebruikersnaam`, `wachtwoord`,`actief`) VALUES ('4', 'ForeverDisabled', 'x','0');
 
 
 -- -----------------------------------------------------

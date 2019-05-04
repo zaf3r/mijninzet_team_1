@@ -1,4 +1,4 @@
-package makeitwork.mijninzet.controller;
+package makeitwork.mijninzet.model;
 
 import makeitwork.mijninzet.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
