@@ -12,6 +12,8 @@ import java.util.List;
 
 public class UserDetailsImp extends User implements UserDetails {
 
+    final private int CONDITION_ACTIVE = 1;
+
     @Autowired
     private User user;
 
@@ -60,6 +62,6 @@ public class UserDetailsImp extends User implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return user.getActive()==CONDITION_ACTIVE;
     }
 }
