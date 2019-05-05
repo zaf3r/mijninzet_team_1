@@ -2,13 +2,16 @@ package makeitwork.mijninzet.config;
 
 import makeitwork.mijninzet.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import repository.UsersRepository;
 
@@ -20,15 +23,23 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 
     @Autowired
+    PasswordEncoder passwordEncoder;
+
+    @Autowired
     private CustomUserDetailsService userDetailsService;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-
-        auth.userDetailsService(userDetailsService)
-        .passwordEncoder(getPasswordEncoder());
+        auth.authenticationProvider(authProvider());
     }
 
+    @Bean
+    DaoAuthenticationProvider authProvider() {
+        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
+        daoAuthenticationProvider.setUserDetailsService(userDetailsService);
+        daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
+        return daoAuthenticationProvider;
+    }
 
 
     //Right now any authorized user can access any page, structure to be added
@@ -42,18 +53,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .formLogin().permitAll();
     }
 
-    //Password encoder to be added, right now passwords are stored as plain text
-    private PasswordEncoder getPasswordEncoder() {
-        return new PasswordEncoder() {
-            @Override
-            public String encode(CharSequence charSequence) {
-                return charSequence.toString();
-            }
-
-            @Override
-            public boolean matches(CharSequence charSequence, String s) {
-                return true;
-            }
-        };
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 }

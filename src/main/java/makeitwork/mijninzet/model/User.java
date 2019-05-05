@@ -1,7 +1,6 @@
 package makeitwork.mijninzet.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.List;
@@ -59,12 +58,12 @@ public class User {
     private int active;
 
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+            CascadeType.DETACH, CascadeType.REFRESH})
     @JoinTable(name = JOINT_TABLE_NAME,
             joinColumns = @JoinColumn(name = COLUMN_ID),
             inverseJoinColumns = @JoinColumn(name = PK_COLUMN_OTHER_ENTITY))
     private List<Role> role;
-
     public User() {
     }
 
@@ -74,6 +73,17 @@ public class User {
         this.id = user.getId();
         this.password = user.getPassword();
         this.active = user.getActive();
+    }
+
+    public User(@NotNull(message = COLUMN_PASSWORD + VERPLICHT)
+                @Size(min = MIN_PWD, message = "minimale lengte van een password is " + MIN_PWD) String password,
+                @NotNull(message = COLUMN_USERNAME + VERPLICHT) String username,
+                @NotNull(message = COLUMN_ACTIVE + VERPLICHT)
+                        int active) {
+
+        this.password = password;
+        this.username = username;
+        this.active = active;
     }
 
     public int getId() {

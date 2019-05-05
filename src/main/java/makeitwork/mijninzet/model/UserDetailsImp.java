@@ -1,10 +1,11 @@
 package makeitwork.mijninzet.model;
 
-import makeitwork.mijninzet.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -19,7 +20,7 @@ public class UserDetailsImp extends User implements UserDetails {
 
 
     public UserDetailsImp(final User user) {
-        this.user = user;
+    this.user = user;
     }
 
     @Override
@@ -37,12 +38,12 @@ public class UserDetailsImp extends User implements UserDetails {
 
     @Override
     public String getPassword() {
-        return super.getPassword();
+        return user.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return super.getUsername();
+        return user.getUsername();
     }
 
     @Override
