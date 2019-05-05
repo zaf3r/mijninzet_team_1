@@ -20,6 +20,7 @@ import makeitwork.mijninzet.repository.UsersRepository;
 @EnableJpaRepositories(basePackageClasses = UsersRepository.class)
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+    //test
 
 
     @Autowired
