@@ -1,4 +1,4 @@
-package repository;
+package makeitwork.mijninzet.repository;
 
 
 import makeitwork.mijninzet.model.User;
