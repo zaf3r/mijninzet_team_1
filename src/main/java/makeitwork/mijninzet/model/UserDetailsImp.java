@@ -1,6 +1,5 @@
 package makeitwork.mijninzet.model;
 
-import makeitwork.mijninzet.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -20,6 +19,7 @@ public class UserDetailsImp extends User implements UserDetails {
 
     public UserDetailsImp(final User user) {
         this.user = user;
+        System.out.println(user.getPassword());
     }
 
     @Override
