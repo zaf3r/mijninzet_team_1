@@ -2,7 +2,7 @@
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE=''ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'';
 -- -----------------------------------------------------
 -- Schema MijnInzet
 -- -----------------------------------------------------
@@ -17,25 +17,25 @@ USE `MijnInzet` ;
 -- ------------------------------------------------------
 -- Aanmaken database-user met ALLE rechten
 -- ------------------------------------------------------
-CREATE USER if not exists 'Umaster'@'localhost' IDENTIFIED BY 'pwdUmaster';
-GRANT ALL PRIVILEGES ON * . * TO 'Umaster'@'localhost';
+CREATE USER if not exists ''Umaster''@''localhost'' IDENTIFIED BY ''pwdUmaster'';
+GRANT ALL PRIVILEGES ON * . * TO ''Umaster''@''localhost'';
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
 -- Table `MijnInzet`.`Gebruiker`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `MijnInzet`.`Gebruiker` (
-  `idGebruiker` INT NOT NULL,
+  `idGebruiker` INT NOT NULL AUTO_INCREMENT,
   `gebruikersnaam` VARCHAR(45) NOT NULL,
-  `wachtwoord` CHAR(200) NOT NULL,
+  `wachtwoord` CHAR(60) NOT NULL,
   `actief` TINYINT(1) NOT NULL,
   PRIMARY KEY (`idGebruiker`))
 ENGINE = InnoDB;
 
-INSERT INTO `mijninzet`.`gebruiker` (`idGebruiker`, `gebruikersnaam`, `wachtwoord`,`actief`) VALUES ('1', 'TheBoss', 'x','1');
-INSERT INTO `mijninzet`.`gebruiker` (`idGebruiker`, `gebruikersnaam`, `wachtwoord`,`actief`) VALUES ('2', 'TheTeacher', 'x','1');
-INSERT INTO `mijninzet`.`gebruiker` (`idGebruiker`, `gebruikersnaam`, `wachtwoord`,`actief`) VALUES ('3', 'capo di tutti capi', 'x','1');
-INSERT INTO `mijninzet`.`gebruiker` (`idGebruiker`, `gebruikersnaam`, `wachtwoord`,`actief`) VALUES ('4', 'ForeverDisabled', 'x','0');
+INSERT INTO `mijninzet`.`gebruiker` (`idGebruiker`, `gebruikersnaam`, `wachtwoord`,`actief`) VALUES (''1'', ''TheBoss'', ''$2a$10$txE89lVWqzofuQpGc7LFcuC.y6BbsrtSeXUcUnOGU/Obw5cQsFNsS'',''1'');
+INSERT INTO `mijninzet`.`gebruiker` (`idGebruiker`, `gebruikersnaam`, `wachtwoord`,`actief`) VALUES (''2'', ''TheTeacher'', ''$2a$10$szbWYgtrnVnTZV4FxwcS6.XfB7flFK3ElwMg70GDXzHvJn/q7GPSu'',''1'');
+INSERT INTO `mijninzet`.`gebruiker` (`idGebruiker`, `gebruikersnaam`, `wachtwoord`,`actief`) VALUES (''3'', ''capo di tutti capi'', ''$2a$10$Gv9vyEofFsczKjLB73UbhevF9.Twq4DXzL1XvquYhFgxU0gPmd3fe'',''1'');
+INSERT INTO `mijninzet`.`gebruiker` (`idGebruiker`, `gebruikersnaam`, `wachtwoord`,`actief`) VALUES (''4'', ''ForeverDisabled'', ''$2a$10$bkyCwHFpeiSt6TcaDCEXS.tOXrip8FmM0Hlrxy8ZjzRjdAb4yEYx2'',''0'');
 
 
 -- -----------------------------------------------------
@@ -62,11 +62,11 @@ CREATE TABLE IF NOT EXISTS `MijnInzet`.`Rollen` (
   PRIMARY KEY (`Rol_id`))
 ENGINE = InnoDB;
 
-INSERT INTO `rollen`(`Rol_id`,`Rol`) VALUES ('1','Docent');
-INSERT INTO `rollen`(`Rol_id`,`Rol`) VALUES ('2','Administrateur');
-INSERT INTO `rollen`(`Rol_id`,`Rol`) VALUES ('3','Systeem');
-INSERT INTO `rollen`(`Rol_id`,`Rol`) VALUES ('4','Manager');
-INSERT INTO `rollen`(`Rol_id`,`Rol`) VALUES ('5','Roosteraar');
+INSERT INTO `rollen`(`Rol_id`,`Rol`) VALUES (''1'',''Docent'');
+INSERT INTO `rollen`(`Rol_id`,`Rol`) VALUES (''2'',''Administrateur'');
+INSERT INTO `rollen`(`Rol_id`,`Rol`) VALUES (''3'',''Systeem'');
+INSERT INTO `rollen`(`Rol_id`,`Rol`) VALUES (''4'',''Manager'');
+INSERT INTO `rollen`(`Rol_id`,`Rol`) VALUES (''5'',''Roosteraar'');
 
 
 -- -----------------------------------------------------
@@ -216,7 +216,7 @@ CREATE TABLE IF NOT EXISTS `MijnInzet`.`Rollen_gebruiker` (
   `Rol_id` INT NOT NULL,
   PRIMARY KEY (`idGebruiker`, `Rol_id`),
   INDEX `fk_Gebruiker_has_Rollen_Rollen1_idx` (`Rol_id` ASC) VISIBLE,
-  INDEX `fk_Gebruiker_has_Rollen_Gebruiker1_idx` (`idGebruiker` ASC) VISIBLE,
+  INDEX `fk_Gebruikerollenr_has_Rollen_Gebruiker1_idx` (`idGebruiker` ASC) VISIBLE,
   CONSTRAINT `fk_Gebruiker_has_Rollen_Gebruiker1`
     FOREIGN KEY (`idGebruiker`)
     REFERENCES `MijnInzet`.`Gebruiker` (`idGebruiker`)
@@ -229,14 +229,14 @@ CREATE TABLE IF NOT EXISTS `MijnInzet`.`Rollen_gebruiker` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-INSERT INTO `mijninzet`.`rollen_gebruiker` (`idGebruiker`, `Rol_id`) VALUES ('1', '4');
-INSERT INTO `mijninzet`.`rollen_gebruiker` (`idGebruiker`, `Rol_id`) VALUES ('2', '1');
-INSERT INTO `mijninzet`.`rollen_gebruiker` (`idGebruiker`, `Rol_id`) VALUES ('3', '1');
-INSERT INTO `mijninzet`.`rollen_gebruiker` (`idGebruiker`, `Rol_id`) VALUES ('3', '2');
-INSERT INTO `mijninzet`.`rollen_gebruiker` (`idGebruiker`, `Rol_id`) VALUES ('3', '3');
-INSERT INTO `mijninzet`.`rollen_gebruiker` (`idGebruiker`, `Rol_id`) VALUES ('3', '4');
-INSERT INTO `mijninzet`.`rollen_gebruiker` (`idGebruiker`, `Rol_id`) VALUES ('3', '5');
-INSERT INTO `mijninzet`.`rollen_gebruiker` (`idGebruiker`, `Rol_id`) VALUES ('4', '1');
+INSERT INTO `mijninzet`.`rollen_gebruiker` (`idGebruiker`, `Rol_id`) VALUES (''1'', ''4'');
+INSERT INTO `mijninzet`.`rollen_gebruiker` (`idGebruiker`, `Rol_id`) VALUES (''2'', ''1'');
+INSERT INTO `mijninzet`.`rollen_gebruiker` (`idGebruiker`, `Rol_id`) VALUES (''3'', ''1'');
+INSERT INTO `mijninzet`.`rollen_gebruiker` (`idGebruiker`, `Rol_id`) VALUES (''3'', ''2'');
+INSERT INTO `mijninzet`.`rollen_gebruiker` (`idGebruiker`, `Rol_id`) VALUES (''3'', ''3'');
+INSERT INTO `mijninzet`.`rollen_gebruiker` (`idGebruiker`, `Rol_id`) VALUES (''3'', ''4'');
+INSERT INTO `mijninzet`.`rollen_gebruiker` (`idGebruiker`, `Rol_id`) VALUES (''3'', ''5'');
+INSERT INTO `mijninzet`.`rollen_gebruiker` (`idGebruiker`, `Rol_id`) VALUES (''4'', ''1'');
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
