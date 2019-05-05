@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<link rel="stylesheet" type="text/css" th:href="@{/css/header.css}"/>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div th:fragment="header" th:align="left">
+        <div class="navbar">
+            <a href="/">Home</a>
+            <a href="/addUser">News</a>
+            <div class="dropdown">
+                <button class="dropbtn">Dropdown
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="/addUser">Nieuwe gebruiker</a>
+                    <a href="/">naar huis</a>
+                    <a href="/addUser">Link 3</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
