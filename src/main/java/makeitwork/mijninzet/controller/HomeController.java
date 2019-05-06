@@ -33,4 +33,7 @@ public class HomeController {
     public String addUser(Model model){
         return "addUser";
     }
+
+    @GetMapping("/globalAvalability")
+    public String addAvalability(Model model) { return "globalAvalability"; }
 }

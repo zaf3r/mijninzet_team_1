@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<link rel="stylesheet" type="text/css" th:href="@{/css/generic.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/avalablity.css}"/>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wekelijkse inzet</title>
+</head>
+<body>
+<div th:insert="~{header :: header}"></div>
+<h2>Uw wekelijkse beschikbaarheid</h2>
+<p>Geef hieronder uw per dag aan welke dag delen u beschikbaar bent</p>
+
+<form>
+    <input type="checkbox" name="maO" value="maandag1">maandag ochtend
+    <input type="checkbox" name="diO" value="dinsdag1">dinsdag ochtend
+    <input type="checkbox" name="woO" value="woensdag1">woensdag ochtend
+    <input type="checkbox" name="doO" value="donderdag1">donderdag ochtend
+    <input type="checkbox" name="vrO" value="vrijdag1">vrijdag ochtend
+    <br>
+    <input type="checkbox" name="maandag2" value="1">maandag middag
+    <input type="checkbox" name="dinsdag2" value="1">dinsdag middag
+    <input type="checkbox" name="woensdag2" value="1">woensdag middag
+    <input type="checkbox" name="donderdag2" value="1">donderdag middag
+    <input type="checkbox" name="vrijdag2" value="1">vrijdag middag
+    <br>
+    <input type="checkbox" name="maandag3" value="1">maandag avond
+    <input type="checkbox" name="dinsdag3" value="1">dinsdag avond
+    <input type="checkbox" name="woensdag3" value="1">woensdag avond
+    <input type="checkbox" name="donderdag3" value="1">donderdag avond
+    <input type="checkbox" name="vrijdag3" value="1">vrijdag avond
+    <br><br>
+    <input type="submit" onclick="alert ('Uw wekelijkse beschikbaarheid is opgeslagen in de database')" value="Opslaan">
+
+    <br><br>
+    <p>Geef hieronder uw incidentele afwezigheid door</p>
+    Afwezig:
+    <input type="date" name="incident">
+    <input type="submit" onclick="alert ('Uw afwezigheid is doorgegeven aan de database')" value="Doorgeven">
+</form>
+<br><br>
+<form action="/">
+<button>Hoofdmenu</button>
+</form>
+</body>
+</html>

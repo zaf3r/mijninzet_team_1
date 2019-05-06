@@ -40,7 +40,7 @@ public class User {
 
     //Fields that are mapped by Hibernate
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idgebruiker")
     private int id;
 
