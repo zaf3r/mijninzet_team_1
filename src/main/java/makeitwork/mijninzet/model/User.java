@@ -40,7 +40,7 @@ public class User {
 
     //Fields that are mapped by Hibernate
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idgebruiker")
     private int id;
 
@@ -64,26 +64,8 @@ public class User {
             joinColumns = @JoinColumn(name = COLUMN_ID),
             inverseJoinColumns = @JoinColumn(name = PK_COLUMN_OTHER_ENTITY))
     private List<Role> role;
+
     public User() {
-    }
-
-    public User(User user) {
-        this.role = user.getRole();
-        this.username = user.getUsername();
-        this.id = user.getId();
-        this.password = user.getPassword();
-        this.active = user.getActive();
-    }
-
-    public User(@NotNull(message = COLUMN_PASSWORD + VERPLICHT)
-                @Size(min = MIN_PWD, message = "minimale lengte van een password is " + MIN_PWD) String password,
-                @NotNull(message = COLUMN_USERNAME + VERPLICHT) String username,
-                @NotNull(message = COLUMN_ACTIVE + VERPLICHT)
-                        int active) {
-
-        this.password = password;
-        this.username = username;
-        this.active = active;
     }
 
     public int getId() {
