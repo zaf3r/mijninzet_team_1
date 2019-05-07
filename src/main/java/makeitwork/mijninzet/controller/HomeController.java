@@ -34,6 +34,11 @@ public class HomeController {
         return "addUser";
     }
 
+    @GetMapping("/jammerdan")
+    public String jammerDan(Model model){
+        return "jammerdan";
+    }
+
     @GetMapping("/globalAvalability")
     public String addAvalability(Model model) { return "globalAvalability"; }
 }
