@@ -33,4 +33,9 @@ public class HomeController {
     public String addUser(Model model){
         return "addUser";
     }
+
+    @GetMapping("/jammerdan")
+    public String jammerDan(Model model){
+        return "jammerdan";
+    }
 }
