@@ -17,9 +17,14 @@ li {
 }
 li a {
     display: block;
+    box-shadow: 0px 8px 18px 0px rgba(0,0,0,0.3);
+    vertical-align:center;
+    margin-right: 2px;
     width: 4em;
     height: 2em;
-    background-color: #dddddd;
+    font-size: 1.25em;
+    color:white;
+    background-color: transparent;
     /*remove the underline of the link*/
     text-decoration: none;
 }
@@ -38,10 +43,11 @@ li:last-child {
 
 /* Dropdown Button */
 .dropbtn {
-    background-color: #dddddd;
-    color: #fff;
-    padding: 16px;
-    font-size: 16px;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    padding: 0;
+    font-size: 1.25em;
     border: none;
     min-width: 4em;
     heigth: 2em;
@@ -60,9 +66,11 @@ li:last-child {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #dddddd;
-    min-width: 2em;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: transparent;
+    text-align: center;
+    vertical-align:center;
+    min-width: 3em;
+    box-shadow: 0px 8px 18px 0px rgba(0,0,0,0.3);
     z-index: 1;
 }
 
@@ -71,14 +79,15 @@ li:last-child {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
+    box-shadow: none;
     display: block;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {background-color: transparent;}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown:hover .dropbtn {background-color: transparent;}
