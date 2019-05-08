@@ -1,4 +1,4 @@
-/*@author Peter Post
+/*@author Peter Post, David Heeneman
  *
  *        Doel programma
  *
