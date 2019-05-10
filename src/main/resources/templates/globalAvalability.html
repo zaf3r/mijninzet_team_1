@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:for="http://www.w3.org/1999/xhtml">
 <html lang="en">
 <link rel="stylesheet" type="text/css" th:href="@{/css/generic.css}"/>
 <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}"/>
@@ -19,7 +19,7 @@
 
 <script language="JavaScript">
     function toggle(source) {
-    checkboxes = document.getElementsByName('dag');
+    checkboxes = document.getElementsByName('day');
     for(var i=0, n=checkboxes.length;i<n;i++) {
     checkboxes[i].checked = source.checked;
     }
@@ -27,26 +27,63 @@
 </script>
 
 
-    <input type="checkbox" onClick="toggle(this)" /> Selecteer alle dagen<br/>
+    <input type="checkbox" onClick="toggle(this)"> Selecteer alle dagen<br/>
+
     <br>
-    <input type="checkbox" name="dag" value="maandag1">maandag ochtend
-    <input type="checkbox" name="dag" value="dinsdag1">dinsdag ochtend
-    <input type="checkbox" name="dag" value="woensdag1">woensdag ochtend
-    <input type="checkbox" name="dag" value="donderdag1">donderdag ochtend
-    <input type="checkbox" name="dag" value="vrijdag1">vrijdag ochtend
+    <input type="checkbox" name="day" value="monday1">maandag ochtend
+    <input type="checkbox" name="day" value="tuesday1">dinsdag ochtend
+    <input type="checkbox" name="day" value="wednesday1">woensdag ochtend
+    <input type="checkbox" name="day" value="thursday1">donderdag ochtend
+    <input type="checkbox" name="day" value="friday1">vrijdag ochtend
     <br>
-    <input type="checkbox" name="dag" value="maandag2">maandag middag
-    <input type="checkbox" name="dag" value="dinsdag2">dinsdag middag
-    <input type="checkbox" name="dag" value="woensdag2">woensdag middag
-    <input type="checkbox" name="dag" value="donderdag2">donderdag middag
-    <input type="checkbox" name="dag" value="vrijdag2">vrijdag middag
+    <input type="checkbox" name="day" value="monday2">maandag middag
+    <input type="checkbox" name="day" value="tuesday2">dinsdag middag
+    <input type="checkbox" name="day" value="wednesday2">woensdag middag
+    <input type="checkbox" name="day" value="thursday2">donderdag middag
+    <input type="checkbox" name="day" value="friday2">vrijdag middag
     <br>
-    <input type="checkbox" name="dag" value="maandag3">maandag avond
-    <input type="checkbox" name="dag" value="dinsdag3">dinsdag avond
-    <input type="checkbox" name="dag" value="woensdag3">woensdag avond
-    <input type="checkbox" name="dag" value="donderdag3">donderdag avond
-    <input type="checkbox" name="dag" value="vrijdag3">vrijdag avond
+    <input type="checkbox" name="day" value="monday3">maandag avond
+    <input type="checkbox" name="day" value="tuesday3">dinsdag avond
+    <input type="checkbox" name="day" value="wednesday3">woensdag avond
+    <input type="checkbox" name="day" value="thursday3">donderdag avond
+    <input type="checkbox" name="day" value="friday3">vrijdag avond
     <br><br>
+
+    <table>
+        <tr>
+            <th></th>
+            <th>maandag</th>
+            <th>dinsdag</th>
+            <th>woensdag</th>
+            <th>donderdag</th>
+            <th>vrijdag</th>
+        </tr>
+        <tr>
+            <th>Ochtend</th>
+            <td><input type="checkbox" name="day" value="monday1"></td>
+            <td><input type="checkbox" name="day" value="tuesday1"></td>
+            <td><input type="checkbox" name="day" value="wednesday1"></td>
+            <td><input type="checkbox" name="day" value="thursday1"></td>
+            <td><input type="checkbox" name="day" value="friday1"></td>
+        </tr>
+        <tr>
+            <th>Middag</th>
+            <td><input type="checkbox" name="day" value="tuesday2"></td>
+            <td><input type="checkbox" name="day" value="tuesday2"></td>
+            <td><input type="checkbox" name="day" value="wednesday2"></td>
+            <td><input type="checkbox" name="day" value="thursday2"></td>
+            <td><input type="checkbox" name="day" value="friday2"></td>
+        </tr>
+        <tr>
+            <th>Avond</th>
+            <td><input type="checkbox" name="day" value="monday3"></td>
+            <td><input type="checkbox" name="day" value="tuesday3"></td>
+            <td><input type="checkbox" name="day" value="wednesday3"></td>
+            <td><input type="checkbox" name="day" value="thursday3"></td>
+            <td><input type="checkbox" name="day" value="friday3"></td>
+        </tr>
+    </table>
+
     <input type="submit" onclick="alert ('Uw wekelijkse beschikbaarheid is opgeslagen in de database')" value="Opslaan">
 
     <br><br>
@@ -58,6 +95,23 @@
 <br><br>
 <form action="/">
 <button>Hoofdmenu</button>
-</form>
+
+
+<!--</form>-->
+
+<!--<br><br>-->
+<!--<form>-->
+<!--    <ul>-->
+<!--        <li th:each="dayPartValue : $(getDayPartValue)" >-->
+<!--            <div class="ui checkbox">-->
+<!--                <input type="checkbox" th:name="#(DayPart.Workday)" th:value="$(DayPart.dayPartValue)">-->
+<!--                <label th:text="$(DayPart.dayPartValue)"></label>-->
+<!--            </div>-->
+<!--        </li>-->
+<!--    </ul>-->
+<!--</form>-->
+
+
+
 </body>
 </html>

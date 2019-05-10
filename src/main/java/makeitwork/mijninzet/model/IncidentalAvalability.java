@@ -1,59 +1,56 @@
 package makeitwork.mijninzet.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table
+@Table (name ="incidentele_beschikbaarheid")
 public class IncidentalAvalability {
 
     @Id
-    @Column
-    private int idGebruiker;
-    @Id
-    @Column
+    @Column(name="incidentId")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int incidentNumber;
+    @Column(name="datum")
     private Date date;
-    @Id
-    @Column
+    @Column(name="dagdeel")
     private int dayPart;
-    @Column
-    private boolean notAvalable;
+    @Column(name="idgebruiker")
+    private int id;
+
+    //Hybernate mapping of the tables 1× @OneToMany with Docent
 
     //no-arg
     public IncidentalAvalability () {}
 
     //all-arg
-    public IncidentalAvalability(int idGebruiker, Date date, int dayPart, boolean notAvalable) {
-        this.idGebruiker = idGebruiker;
+    public IncidentalAvalability(int incidentNumber, Date date, int dayPart, int id) {
+        this.incidentNumber = incidentNumber;
         this.date = date;
         this.dayPart = dayPart;
-        this.notAvalable = notAvalable;
+        this.id = id;
     }
 
     //Getters
-    public int getIdGebruiker() { return idGebruiker; }
+    public int getId() { return id; }
     public Date getDate() { return date; }
     public int getDayPart() { return dayPart; }
-    public boolean isNotAvalable() { return notAvalable; }
+    public int getIncidentNumber() { return incidentNumber; }
 
     //setters
-    public void setIdGebruiker(int idGebruiker) { this.idGebruiker = idGebruiker; }
+    public void setId(int id) { this.id = id; }
     public void setDate(Date date) { this.date = date; }
     public void setDayPart(int dayPart) { this.dayPart = dayPart; }
-    public void setNotAvalable(boolean notAvalable) { this.notAvalable = notAvalable; }
+    public void setIncidentNumber(int incidentNumber) { this.incidentNumber = incidentNumber; }
 
     //toString
     @Override
     public String toString() {
-        return "incidentalAvalability{" +
-                "idGebruiker=" + idGebruiker +
+        return "IncidentalAvalability{" +
+                "incidentNumber=" + incidentNumber +
                 ", date=" + date +
                 ", dayPart=" + dayPart +
-                ", notAvalable=" + notAvalable +
+                ", id=" + id +
                 '}';
     }
-
 }
