@@ -9,10 +9,10 @@ import java.util.List;
 public class DayPart {
 
     @Id
-    @Column
+    @Column(name="werkdag")
     private int workday;
     //@Id       this is a composite key, error when running with both Columns as @Id
-    @Column
+    @Column(name="dagdeel")
     private int daypart;
 
 

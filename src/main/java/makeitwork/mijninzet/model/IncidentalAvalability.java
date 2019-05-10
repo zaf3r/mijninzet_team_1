@@ -15,7 +15,7 @@ public class IncidentalAvalability {
     private Date date;
     @Column(name="dagdeel")
     private int dayPart;
-    @Column(name="idgebruiker")
+    @Column(name="idGebruiker")
     private int id;
 
     //Hybernate mapping of the tables 1× @OneToMany with Docent

@@ -12,7 +12,7 @@ public class GlobalAvalability {
     public final int TOTALNUMBEROFDAYPARTS = 15;
 
     @Id
-    @Column(name = "idgebruiker")
+    @Column(name = "idGebruiker")
     private int id;
     @Column(name = "werkdag")
     private int workDay;
