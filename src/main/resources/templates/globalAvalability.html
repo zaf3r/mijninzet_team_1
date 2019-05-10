@@ -90,6 +90,20 @@
     <p>Geef hieronder uw incidentele afwezigheid door</p>
     Afwezig:
     <input type="date" name="incident">
+    <table>
+        <tr>
+            <th></th>
+            <th>ochtend</th>
+            <th>middag</th>
+            <th>avond</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="checkbox" name="day" value="morning"></td>
+            <td><input type="checkbox" name="day" value="afternoon"></td>
+            <td><input type="checkbox" name="day" value="evening"></td>
+        </tr>
+    </table>
     <input type="submit" onclick="alert ('Uw afwezigheid is doorgegeven aan de database')" value="Doorgeven">
 </form>
 <br><br>

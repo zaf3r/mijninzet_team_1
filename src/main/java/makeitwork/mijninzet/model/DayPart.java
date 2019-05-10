@@ -1,20 +1,25 @@
 package makeitwork.mijninzet.model;
 
+
+
 import javax.persistence.*;
+import java.awt.*;
 import java.util.Arrays;
 import java.util.List;
 
+
+
 @Entity
 @Table(name = "dagdeel")
+@IdClass (DayPartId.class)
 public class DayPart {
 
     @Id
     @Column(name="werkdag")
     private int workday;
-    //@Id       this is a composite key, error when running with both Columns as @Id
+    @Id
     @Column(name="dagdeel")
     private int daypart;
-
 
     //Hybernate mapping of the tables 1× @OneToMany with table GlobalAvalability
 
