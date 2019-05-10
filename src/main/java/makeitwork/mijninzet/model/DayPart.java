@@ -11,7 +11,7 @@ public class DayPart {
     @Id
     @Column
     private int workday;
-    @Id
+    //@Id       this is a composite key, error when running with both Columns as @Id
     @Column
     private int daypart;
 
@@ -67,7 +67,6 @@ public class DayPart {
     public void setDaypart(int daypart) { this.daypart = daypart; }
 
     //toString
-
     @Override
     public String toString() {
         return "DayPart{" +
