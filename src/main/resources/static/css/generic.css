@@ -52,7 +52,6 @@ input[type=button]{
     collapse: true;
     cursor: pointer;
 }
-
-table {
-    text-align: center;
+input[type=checkbox]{
+    float: none;
 }
