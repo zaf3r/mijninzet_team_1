@@ -1,6 +1,7 @@
 package makeitwork.mijninzet.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -21,8 +22,14 @@ public class GlobalAvalability {
     @Column(name = "beschikbaar")
     private boolean avalable;
 
-    //Hybernate mapping of the tables 2× @OneToMany with Docent and DayPart
+    @Transient
+    private List<GlobalAvalability> avalabilities;
 
+    //Hybernate mapping of the tables 2× @OneToMany with Docent and DayPart
+    @ManyToOne
+    @JoinColumn(name="dayparts")
+    @JoinColumn(name="teachers")
+    public List<GlobalAvalability> getAvalabilities() { return avalabilities; }
 
     //no-arg constructor
     public GlobalAvalability () {}

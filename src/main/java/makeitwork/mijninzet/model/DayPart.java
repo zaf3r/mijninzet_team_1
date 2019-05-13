@@ -21,7 +21,14 @@ public class DayPart {
     @Column(name="dagdeel")
     private int daypart;
 
+    @Transient
+    private List<DayPart> dayParts;
+
     //Hybernate mapping of the tables 1× @OneToMany with table GlobalAvalability
+
+    @OneToMany(targetEntity = GlobalAvalability.class, mappedBy = "avalabilities",
+            cascade = CascadeType.ALL, fetch=FetchType.LAZY)
+    public List<DayPart> getDayParts() { return dayParts; }
 
     @Transient
     private String dayPartValue;
