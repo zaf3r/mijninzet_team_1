@@ -1,6 +1,8 @@
 package makeitwork.mijninzet.controller;
 
 import makeitwork.mijninzet.model.*;
+import makeitwork.mijninzet.repository.PreferenceRepository;
+import makeitwork.mijninzet.repository.SubjectRepository;
 import makeitwork.mijninzet.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,56 +18,102 @@ import java.util.Set;
 @RequestMapping("/teacher")
 public class TeacherController {
 
+    final private List<PreferenceScale> preferenceScaleList = getPreferenceScaleList();
+
     @Autowired
     UsersRepository usersRepository;
+
+    @Autowired
+    SubjectRepository subjectRepository;
+
+    @Autowired
+    PreferenceRepository preferenceRepository;
 
     @GetMapping("preference")
     public String addPreferences(Model model, Principal principal) {
 
+        // Get user
         User user = usersRepository.findByUsername(principal.getName());
 
-        System.out.println(user.getUsername());
+        // Get user preference
+        Set<Preference> preferenceSet = preferenceRepository.findAllByUser(user);
+        System.out.println(preferenceSet);
 
-        Set<Preference> voorkeur = user.getPreferenceSet();
+        //Query list of subjects
+        List<Subject> subjectList = subjectRepository.findAll();
 
-        System.out.println(voorkeur);
+        //Test whether the preferences are empty, if empty, add preference object with only subjects
+        if(preferenceSet.isEmpty()) {
+            for (Subject subject: subjectList) {
 
+                Preference tempPreference = new Preference();
+                tempPreference.setSubject(subject);
+                tempPreference.setUser(user);
+                preferenceSet.add(tempPreference);
+            }
 
-        /*VoorkeurSchaal voorkeurSchaal1 = new VoorkeurSchaal(1);
-        VoorkeurSchaal voorkeurSchaal2 = new VoorkeurSchaal(2);
-        VoorkeurSchaal voorkeurSchaal3 = new VoorkeurSchaal(3);
+            System.out.println(preferenceSet.isEmpty());
 
-        ArrayList<VoorkeurSchaal> voorkeurSchaal = new ArrayList<>();
-        voorkeurSchaal.add(voorkeurSchaal1);
-        voorkeurSchaal.add(voorkeurSchaal2);
-        voorkeurSchaal.add(voorkeurSchaal3);
+            // Vervang preference set met gevuld preference set
+            System.out.println("If I ended up here, something went wrong");
+            preferenceRepository.saveAll(preferenceSet);
+        }
 
-        Voorkeur voorkeur1 = new Voorkeur("Programming",1, voorkeurSchaal);
-        Voorkeur voorkeur2 = new Voorkeur("OOP",1,voorkeurSchaal);
-        Voorkeur voorkeur3 = new Voorkeur("Advanced programming",3,voorkeurSchaal);
-        Voorkeur voorkeur4 = new Voorkeur("Complex programmeren",2,voorkeurSchaal);
+        // Preparing preference Form
+        List<Integer> preferenceRatingList = new ArrayList<>();
+        PreferenceForm preferenceForm = new PreferenceForm(preferenceRatingList);
 
-        List<Voorkeur> voorkeurTestsList = new ArrayList<Voorkeur>();
-        voorkeurTestsList.add(voorkeur1);
-        voorkeurTestsList.add(voorkeur2);
-        voorkeurTestsList.add(voorkeur3);
-        voorkeurTestsList.add(voorkeur4);
-*/
-        PreferenceForm preferenceForm = new PreferenceForm();
-
+        //Loading the preference form with data
+        for (Preference preference: preferenceSet) {
+            preferenceForm.getPreferenceRating().add(preference.getPreference());
+        }
 
         model.addAttribute("preferenceForm",preferenceForm);
-        /*model.addAttribute("voorkeurTestsList",voorkeurTestsList);
-        model.addAttribute("voorkeurSchaal",voorkeurSchaal);*/
+        model.addAttribute("subjectsList",subjectList);
+        model.addAttribute("preferenceScaleList",preferenceScaleList);
 
         return "voorkeur-vakken";
     }
 
+
     @PostMapping("postPreferences")
-    public String postPreferences(@ModelAttribute("preferenceForm") PreferenceForm preferenceForm) {
-        System.out.println(preferenceForm);
+    public String postPreferences(@ModelAttribute("preferenceForm") PreferenceForm preferenceForm,
+                                  Principal principal) {
+
+        //loading in user
+        User user = usersRepository.findByUsername(principal.getName());
+
+        //loading preference
+        Set<Preference> preferenceSet = preferenceRepository.findAllByUser(user);
+
+        //Overwrite values from form
+        int index = 0;
+        for (Preference preference : preferenceSet) {
+                int tempRating = preferenceForm.getPreferenceRating().get(index++);
+                System.out.println(index);
+                preference.setPreference(tempRating);
+        }
+
+         //Save preferences
+        preferenceRepository.saveAll(preferenceSet);
 
         return "redirect:/teacher/preference";
+    }
+
+    /**
+     * Method for retrieving an arraylist of preference scale values
+     * These values are used in "voorkeur-vakken" for generating the radio buttons
+     * This is seperated so that it can always be changed in case scales change
+     * @return
+     */
+    private List<PreferenceScale> getPreferenceScaleList() {
+        List<PreferenceScale> preferenceScaleList = new ArrayList<>();
+
+        preferenceScaleList.add(new PreferenceScale(1));
+        preferenceScaleList.add(new PreferenceScale(2));
+        preferenceScaleList.add(new PreferenceScale(3));
+
+        return preferenceScaleList;
     }
 
 }

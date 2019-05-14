@@ -8,19 +8,30 @@ import java.io.Serializable;
 public class Preference implements Serializable {
 
     @Id
-    @ManyToOne
-    @JoinColumn(name = "idvak_fk")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "idpref")
+    private long id;
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "codevak")
     private Subject subject;
 
-    @Id
-    @ManyToOne
-    @JoinColumn(name = "idgebruiker_fk")
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "idgebruiker")
     private User user;
 
     @Column(name = "voorkeur")
     private int preference;
 
     public Preference(){
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public Subject getSubject() {
@@ -45,5 +56,14 @@ public class Preference implements Serializable {
 
     public void setPreference(int preference) {
         this.preference = preference;
+    }
+
+    @Override
+    public String toString() {
+        return "Preference{" +
+                "subject=" + subject +
+                ", user=" + user +
+                ", preference=" + preference +
+                '}';
     }
 }

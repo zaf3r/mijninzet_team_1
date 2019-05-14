@@ -9,13 +9,37 @@ import java.util.Set;
 public class Subject {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "codevak")
     int subjectId;
 
     @Column(name = "naamvak")
     String subjectName;
 
-    @OneToMany(mappedBy = "subject")
+    @OneToMany(mappedBy = "subject", cascade= CascadeType.PERSIST)
     private Set<Preference> preferenceSet = new HashSet<>();
 
+    public int getSubjectId() {
+        return subjectId;
+    }
+
+    public void setSubjectId(int subjectId) {
+        this.subjectId = subjectId;
+    }
+
+    public String getSubjectName() {
+        return subjectName;
+    }
+
+    public void setSubjectName(String subjectName) {
+        this.subjectName = subjectName;
+    }
+
+    public Set<Preference> getPreferenceSet() {
+        return preferenceSet;
+    }
+
+    public void setPreferenceSet(Set<Preference> preferenceSet) {
+        this.preferenceSet = preferenceSet;
+    }
 }

@@ -11,13 +11,13 @@
     <form th:object="${preferenceForm}" th:action="@{postPreferences}" method="post">
         <fieldset>
             <legend>Vakken</legend>
-            <ul th:each="vak, vakindex : ${voorkeurTestsList}">
-                    <label th:text="${vak.naamVak}"></label>
-                        <div th:each="schaal, schaalStat : ${voorkeurSchaal}">
+            <ul th:each="subject, subjectIndex : ${subjectsList}">
+                    <label th:text="${subject.subjectName}"></label>
+                        <div th:each="scaleValue, scaleIndex : ${preferenceScaleList}">
                         <input type="radio"
-                               th:field="*{voorkeur[__${vakindex.index}__].voorkeurVak}"
-                               th:value="${voorkeurSchaal[__${schaalStat.index}__].schaal}" />
-                        <label th:text="${voorkeurSchaal[__${schaalStat.index}__].schaal}"></label>
+                               th:field="${preferenceForm.preferenceRating[__${subjectIndex.index}__]}"
+                               th:value="${scaleValue.scale}" />
+                        <label th:text="${scaleValue.scale}"></label>
                     <br>
                 </div>
             </ul>

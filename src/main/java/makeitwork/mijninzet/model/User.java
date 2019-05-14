@@ -11,6 +11,7 @@ import java.util.Set;
 @Table(name = "gebruiker")
 public class User {
 
+
     //Validation fields
     @Transient
     private final String VERPLICHT=" is een verplicht veld";
@@ -32,6 +33,7 @@ public class User {
     @Transient
     private final String COLUMN_ACTIVE = "actief";
 
+
     //Constant variables that represent other table names/columns
     @Transient
     private final String JOINT_TABLE_NAME = "rollen_gebruiker";
@@ -42,7 +44,7 @@ public class User {
 
     //Fields that are mapped by Hibernate
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "idgebruiker")
     private int id;
 
@@ -59,7 +61,7 @@ public class User {
     @Column(name = COLUMN_ACTIVE)
     private int active;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user",cascade= CascadeType.ALL)
     private Set<Preference> preferenceSet =  new HashSet<>();
 
     @ManyToMany(fetch = FetchType.EAGER, cascade= {CascadeType.PERSIST, CascadeType.MERGE,
