@@ -4,6 +4,7 @@ package makeitwork.mijninzet.controller;
 import makeitwork.mijninzet.model.DayPart;
 import makeitwork.mijninzet.model.GlobalAvalability;
 import makeitwork.mijninzet.model.Voorkeur;
+import makeitwork.mijninzet.model.forms.AvalabilityForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -24,8 +25,8 @@ public class GlobalAvalabilityController {
     }
 
     @RequestMapping(name = "/submitAvalabilityForm.html", method = RequestMethod.POST)
-    public ModelAndView submitAvalabilityForm() {
-        ModelAndView model = new ModelAndView(  @RequestParam("monday1") boolean MaMoAv,
+    public ModelAndView submitAvalabilityForm()
+    ModelAndView model = new ModelAndView(      @RequestParam("monday1") boolean MaMoAv,
                                                 @RequestParam("monday2") boolean MaAfAv,
                                                 @RequestParam("monday3") boolean MaEvAv,
 
@@ -45,18 +46,17 @@ public class GlobalAvalabilityController {
                                                 @RequestParam("friday") boolean FrAfAv,
                                                 @RequestParam("friday") boolean FrEvAv)
 
-        {
-
-//            ModelAndView model = new ModelAndView("Avalability Submitted");
-//            model.addObject("iets");
+    {
+        ModelAndView model = new ModelAndView("Avalability Submitted");
+        model.addObject("iets");
 
             // Linus: voor elke dag of dagdeel een setter van de boolean
           //  algemeneWeek.getDag(dagnaam "hsdhid").setOchtend(MaMoAv);
 
-            globalAvalability.getDayPart(1, 1).setDayPart(MaAfAv);
-        }
-        return model;
+         //   GlobalAvalability.isAvalable(1, 1).setAvalabilities(MaAfAv);
     }
+        return model;
+
 
     @RequestMapping(name = "/incidentForm.html", method = RequestMethod.GET)
     public ModelAndView getIncidentForm() {
