@@ -37,7 +37,7 @@
 <h2 th:align="left" >Uw wekelijkse beschikbaarheid</h2>
 <p>Geef hieronder uw per dag aan welke dag delen u beschikbaar bent</p>
 
-<form>
+<form action="#" th:action="@{/globalAvalability/avalabilityForm.html}" th:object="${avalabilities}", method = post>
     <input type="checkbox" onClick="selectAll();"> Selecteer alle dagen<br><br>
     <table id = "t1" align="center">
         <tr>
@@ -54,7 +54,7 @@
                 <p>Ochtend</p>
                 <p>9:00-12:30</p>
             </th>
-            <td class="checked"><input type="hidden" name="monday1" value="1"></td>
+            <td class="checked"><input type="hidden" th:value="*{monday1} name="monday1" value="1"></td>
             <td class="checked"><input type="hidden" name="tuesday1" value="1"></td>
             <td class="checked"><input type="hidden" name="wednesday1" value="1"></td>
             <td class="checked"><input type="hidden" name="thursday1" value="1"></td>
@@ -90,7 +90,7 @@
     <br><br>
 </form>
 
-<form>
+<form action="#" th:action="@{/globalAvalability/incidentForm.html}" th:object="${incidents}", method = post>
     <p>Geef hieronder uw incidentele afwezigheid door</p>
     Afwezig:
     <input type="date" name="incident">

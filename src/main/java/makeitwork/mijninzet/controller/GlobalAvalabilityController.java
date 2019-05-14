@@ -6,23 +6,79 @@ import makeitwork.mijninzet.model.GlobalAvalability;
 import makeitwork.mijninzet.model.Voorkeur;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 @Controller
-@RequestMapping("/globalAvalability")
+@RequestMapping(name="/globalAvalability")
 public class GlobalAvalabilityController {
+
+    @RequestMapping(name = "/avalabilityForm.html", method = RequestMethod.GET)
+    public ModelAndView getAvalabilityForm() {
+        ModelAndView model = new ModelAndView("AvalabilityForm");
+        return model;
+    }
+
+    @RequestMapping(name = "/submitAvalabilityForm.html", method = RequestMethod.POST)
+    public ModelAndView submitAvalabilityForm() {
+        ModelAndView model = new ModelAndView(@RequestParam("monday1") String name,
+        @RequestParam("value") int value)
+        @RequestParam
+
+        @RequestParam
+        @RequestParam
+        @RequestParam
+
+        @RequestParam
+        @RequestParam
+        @RequestParam
+
+        @RequestParam
+        @RequestParam
+        @RequestParam
+
+        @RequestParam
+        @RequestParam
+        @RequestParam
+
+        {
+
+            ModelAndView model = new ModelAndView("Avalability Submitted");
+            model.addObject("iets");
+        }
+        return model;
+    }
+
+    @RequestMapping(name = "/incidentForm.html", method = RequestMethod.GET)
+    public ModelAndView getIncidentForm() {
+        ModelAndView model = new ModelAndView("IncidentForm");
+        return model;
+    }
+
+    @RequestMapping(name = "/submitIncidentForm.html", method = RequestMethod.POST)
+    public ModelAndView submitIncidentForm() {
+        ModelAndView model = new ModelAndView(@RequestParam("date") Date name,
+        @RequestParam("morning") int value,
+        @RequestParam("afternoon") int value,
+        @RequestParam("evening") int value)
+        {
+            ModelAndView model = new ModelAndView("Incident Submitted");
+            model.addObject("iets");
+        }
+        return model;
+
+    }
+}
+
 
 //    @GetMapping("dayParts")
 //    public String addDayParts(Model model) {
 
-//        GlobalAvalability monday1 = new GlobalAvalability (user.id, 1, 1, true);
+//        GlobalAvalability monday1 = new GlobalAvalability (user.id, 1, 1, @Requestparameter "monday1");
 //        GlobalAvalability monday2 = new GlobalAvalability(1, 2);
 //        GlobalAvalability monday3 = new GlobalAvalability(1, 3);
 //        GlobalAvalability tuesday1 = new GlobalAvalability(2, 1);
@@ -82,4 +138,4 @@ public class GlobalAvalabilityController {
 //        return  "redirect:/globalAvalability";
 
     //@PostMapping("postIncidentalAvalability")
-}
+
