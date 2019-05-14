@@ -23,7 +23,6 @@ public class IncidentalAvalability {
     private List<IncidentalAvalability> incidenten;
 
     //Hybernate mapping of the tables 1× @OneToMany with Teacher
-
     @OneToMany(targetEntity = Teacher.class, mappedBy = "teachers",
             cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     public List<IncidentalAvalability> getIncidenten() { return incidenten; }

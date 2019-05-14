@@ -16,7 +16,6 @@ public class Teacher {
     private List<Teacher> teachers;
 
     //Hybernate mapping of the tables 2× @ManyToOne with IncidentalAvalability & GlobalAvalability
-
     @ManyToOne
     @JoinColumn(name="dayParts")
     @JoinColumn(name="incidenten")

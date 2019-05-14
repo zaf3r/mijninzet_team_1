@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="674d5d15-ae36-4c4f-827e-641c2b2ad1e7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/controller/GlobalAvalabilityController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/controller/TeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/controller/TeacherController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/DayPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/DayPart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/GlobalAvalability.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/GlobalAvalability.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/IncidentalAvalability.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/IncidentalAvalability.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/Teacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/Teacher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/globalAvalability.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/globalAvalability.html" afterDir="false" />
@@ -39,8 +40,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/GlobalAvalability.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+            <state relative-caret-position="254">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,10 +52,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/Teacher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+            <state relative-caret-position="306">
+              <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/controller/TeacherController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="67">
+              <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+              <folding>
+                <element signature="e#1297#1307#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -63,20 +76,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/globalAvalability.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1105">
-              <caret line="29" column="76" selection-start-line="29" selection-start-column="76" selection-end-line="29" selection-end-column="76" />
-              <folding>
-                <marker date="1557753029633" expanded="true" signature="3206:3617" ph="..." />
-              </folding>
+            <state relative-caret-position="328">
+              <caret line="149" selection-start-line="149" selection-end-line="149" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/IncidentalAvalability.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/controller/GlobalAvalabilityController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+            <state relative-caret-position="1275">
+              <caret line="75" column="7" lean-forward="true" selection-start-line="75" selection-start-column="7" selection-end-line="75" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -87,8 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/DayPart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="192">
+              <caret line="27" column="80" selection-start-line="27" selection-start-column="67" selection-end-line="27" selection-end-column="80" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -97,10 +107,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/controller/HomeController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+            <state relative-caret-position="102">
+              <caret line="6" column="37" lean-forward="true" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/PreferenceForm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -123,6 +142,8 @@
       <find>authpro</find>
       <find>dev</find>
       <find>ssl</find>
+      <find>ev</find>
+      <find>td</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -163,17 +184,18 @@
         <option value="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/incidentalAvalability.java" />
         <option value="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/repository/IncidentalAvalabilityRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/repository/GlobalAvalablityRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/controller/GlobalAvalabilityController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/avalability.css" />
         <option value="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/GlobalAvalablity.java" />
         <option value="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/repository/GlobalAvalabilityRepository.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/generic.css" />
         <option value="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/Docent.java" />
         <option value="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/DayPartId.java" />
-        <option value="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/DayPart.java" />
-        <option value="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/Teacher.java" />
-        <option value="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/IncidentalAvalability.java" />
         <option value="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/GlobalAvalability.java" />
+        <option value="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/IncidentalAvalability.java" />
+        <option value="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/Teacher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/controller/TeacherController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/DayPart.java" />
+        <option value="$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/controller/GlobalAvalabilityController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/globalAvalability.html" />
       </list>
     </option>
@@ -206,6 +228,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="mijninzet" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -342,18 +376,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="mijninzet" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -408,7 +430,7 @@
   </component>
   <component name="RunManager">
     <configuration name="MijninzetApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="Sprint 1" />
+      <module name="mijninzet" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="makeitwork.mijninzet.MijninzetApplication" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
@@ -439,6 +461,7 @@
       <workItem from="1557491687554" duration="582000" />
       <workItem from="1557497211977" duration="2125000" />
       <workItem from="1557748347588" duration="1839000" />
+      <workItem from="1557753967367" duration="13862000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1556914852462</created>
@@ -528,13 +551,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91089000" />
+    <option name="totallyTimeSpent" value="104951000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22080536" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21946308" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -570,7 +593,7 @@
       <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.3295302" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20939597" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21946308" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -579,15 +602,15 @@
       <window_info id="Web" order="6" side_tool="true" />
       <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49932885" visible="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4986577" weight="0.40084985" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49932885" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4986577" visible="true" weight="0.40084985" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3286119" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50067115" side_tool="true" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50067115" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.3286119" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49932885" weight="0.3286119" />
@@ -603,6 +626,7 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" weight="0.3295302" />
+      <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.3295302" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -665,9 +689,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="Class models of DayPart, Docent, Global- &amp; IncidentalAvalability&#10;Done with Hybernate except the mapping of tables, see comments.&#10;Does compile and log-in works&#10;Composite key working in Daypart" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="310" height="330" key="Git.Branch.Popup" />
-    <state width="310" height="330" key="Git.Branch.Popup/1920.1080" />
-    <state width="310" height="330" key="Git.Branch.Popup@1920.1080@120dpi" />
+    <state width="317" height="337" key="Git.Branch.Popup" />
+    <state width="317" height="337" key="Git.Branch.Popup/1920.1080" />
+    <state width="317" height="337" key="Git.Branch.Popup@1920.1080@120dpi" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -677,41 +701,6 @@
     <SUITE FILE_PATH="coverage/Sprint_1$MijninzetApplication.ic" NAME="MijninzetApplication Coverage Results" MODIFIED="1557318346943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.6.RELEASE/spring-web-5.1.6.RELEASE.jar!/org/springframework/web/filter/RequestContextFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.17/tomcat-embed-core-9.0.17.jar!/org/apache/catalina/core/ApplicationFilterChain.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.6.RELEASE/spring-web-5.1.6.RELEASE.jar!/org/springframework/web/filter/FormContentFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.6.RELEASE/spring-web-5.1.6.RELEASE.jar!/org/springframework/web/filter/OncePerRequestFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.1.6.RELEASE/spring-beans-5.1.6.RELEASE.jar!/org/springframework/beans/factory/support/AbstractBeanFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="100" selection-start-line="100" selection-end-line="100" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.1.6.RELEASE/spring-context-5.1.6.RELEASE.jar!/org/springframework/context/annotation/ConfigurationClassEnhancer.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
@@ -833,13 +822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="37" lean-forward="true" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/repository/SQLScripts/GlobalAvalability.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/config/SecurityConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -889,7 +871,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/controller/GlobalAvalabilityController.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.1.4.RELEASE/spring-boot-autoconfigure-2.1.4.RELEASE.jar!/org/springframework/boot/autoconfigure/orm/jpa/JpaBaseConfiguration.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="986">
@@ -911,13 +892,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-35">
-          <caret line="42" selection-start-line="42" selection-end-line="42" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -980,6 +954,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/repository/SQLScripts/MijnInzet versie 3.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2050" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/IncidentalAvalability.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="24" column="64" selection-start-line="24" selection-start-column="64" selection-end-line="24" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/controller/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/Voorkeur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/VoorkeurSchaal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/PreferenceForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="42" selection-start-line="42" selection-end-line="42" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/voorkeur-vakken.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/UserDetailsImp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -990,35 +1021,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/repository/SQLScripts/MijnInzet versie 3.sql">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2050" />
+        <state relative-caret-position="102">
+          <caret line="6" column="37" lean-forward="true" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/controller/TeacherController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+          <folding>
+            <element signature="e#1297#1307#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/GlobalAvalability.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/Teacher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/IncidentalAvalability.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+        <state relative-caret-position="254">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1027,28 +1050,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/DayPart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="192">
+          <caret line="27" column="80" selection-start-line="27" selection-start-column="67" selection-end-line="27" selection-end-column="80" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/controller/HomeController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/model/Teacher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        <state relative-caret-position="306">
+          <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/makeitwork/mijninzet/controller/GlobalAvalabilityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="75" column="7" lean-forward="true" selection-start-line="75" selection-start-column="7" selection-end-line="75" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/globalAvalability.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1105">
-          <caret line="29" column="76" selection-start-line="29" selection-start-column="76" selection-end-line="29" selection-end-column="76" />
-          <folding>
-            <marker date="1557753029633" expanded="true" signature="3206:3617" ph="..." />
-          </folding>
+        <state relative-caret-position="328">
+          <caret line="149" selection-start-line="149" selection-end-line="149" />
         </state>
       </provider>
     </entry>
