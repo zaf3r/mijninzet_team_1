@@ -1,6 +1,7 @@
 package makeitwork.mijninzet.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -8,13 +9,13 @@ import java.util.Set;
 public class Subject {
 
     @Id
-    @Column(name = "codeVak")
+    @Column(name = "codevak")
     int subjectId;
 
     @Column(name = "naamvak")
     String subjectName;
 
     @OneToMany(mappedBy = "subject")
-    private Set<Preference> preferenceSet;
+    private Set<Preference> preferenceSet = new HashSet<>();
 
 }

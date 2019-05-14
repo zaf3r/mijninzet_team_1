@@ -3,7 +3,6 @@ package makeitwork.mijninzet.controller;
 import makeitwork.mijninzet.model.*;
 import makeitwork.mijninzet.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 @RequestMapping("/teacher")
@@ -26,7 +26,12 @@ public class TeacherController {
 
         System.out.println(user.getUsername());
 
-        VoorkeurSchaal voorkeurSchaal1 = new VoorkeurSchaal(1);
+        Set<Preference> voorkeur = user.getPreferenceSet();
+
+        System.out.println(voorkeur);
+
+
+        /*VoorkeurSchaal voorkeurSchaal1 = new VoorkeurSchaal(1);
         VoorkeurSchaal voorkeurSchaal2 = new VoorkeurSchaal(2);
         VoorkeurSchaal voorkeurSchaal3 = new VoorkeurSchaal(3);
 
@@ -45,14 +50,13 @@ public class TeacherController {
         voorkeurTestsList.add(voorkeur2);
         voorkeurTestsList.add(voorkeur3);
         voorkeurTestsList.add(voorkeur4);
-
+*/
         PreferenceForm preferenceForm = new PreferenceForm();
-        preferenceForm.setVoorkeur(voorkeurTestsList);
 
 
         model.addAttribute("preferenceForm",preferenceForm);
-        model.addAttribute("voorkeurTestsList",voorkeurTestsList);
-        model.addAttribute("voorkeurSchaal",voorkeurSchaal);
+        /*model.addAttribute("voorkeurTestsList",voorkeurTestsList);
+        model.addAttribute("voorkeurSchaal",voorkeurSchaal);*/
 
         return "voorkeur-vakken";
     }

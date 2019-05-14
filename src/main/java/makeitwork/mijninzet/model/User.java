@@ -3,6 +3,7 @@ package makeitwork.mijninzet.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -59,7 +60,7 @@ public class User {
     private int active;
 
     @OneToMany(mappedBy = "user")
-    private Set<Preference> preferenceSet;
+    private Set<Preference> preferenceSet =  new HashSet<>();
 
     @ManyToMany(fetch = FetchType.EAGER, cascade= {CascadeType.PERSIST, CascadeType.MERGE,
             CascadeType.DETACH, CascadeType.REFRESH})

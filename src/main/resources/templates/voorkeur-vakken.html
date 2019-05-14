@@ -39,7 +39,7 @@
 
     <form th:object="${preferenceForm}" method="post">
         <fieldset>
-            <legend>Subjects</legend>
+            <legend>Subject</legend>
             <ul>
                 <li th:each="preference, preferenceStat: ${voorkeurTestsList}">\
                     <label th:text="${preference.naamVak}"></label>

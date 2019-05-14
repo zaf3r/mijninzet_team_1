@@ -9,12 +9,12 @@ public class Preference implements Serializable {
 
     @Id
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "idvak_fk")
     private Subject subject;
 
     @Id
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "idgebruiker_fk")
     private User user;
 
     @Column(name = "voorkeur")
