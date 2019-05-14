@@ -1,7 +1,5 @@
 package makeitwork.mijninzet.model;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Voorkeur {

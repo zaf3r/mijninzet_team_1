@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "gebruiker")
@@ -57,6 +58,8 @@ public class User {
     @Column(name = COLUMN_ACTIVE)
     private int active;
 
+    @OneToMany(mappedBy = "user")
+    private Set<Preference> preferenceSet;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade= {CascadeType.PERSIST, CascadeType.MERGE,
             CascadeType.DETACH, CascadeType.REFRESH})
@@ -106,5 +109,13 @@ public class User {
 
     public void setActive(int active) {
         this.active = active;
+    }
+
+    public Set<Preference> getPreferenceSet() {
+        return preferenceSet;
+    }
+
+    public void setPreferenceSet(Set<Preference> preferenceSet) {
+        this.preferenceSet = preferenceSet;
     }
 }

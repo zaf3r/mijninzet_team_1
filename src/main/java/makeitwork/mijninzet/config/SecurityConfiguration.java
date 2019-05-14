@@ -46,10 +46,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin().permitAll()
-                .and()
-                .rememberMe().key("uniqueAndSecret")
-                ;
+                .formLogin().permitAll();
     }
 
     @Bean
