@@ -6,28 +6,53 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        table {
+            width: 60%;
+
+        }
+        th, td {
+            width: 10%;
+        }
+        th {
+            height: 50px;
+            color: #185a9d;
+            background-color: #ffffb3;
+        }
+        td {
+
+            background-color: coral;
+        }
+        table, th, td {
+            font-family: arial, sans-serif;
+            border: 1px solid black;
+
+        }
+        table#t1 tr td.checked {
+            background: #3e8e41;
+        }
+        table#t2 tr th.checked{
+            background: coral;
+        }
+    </style>
 </head>
 <body>
 <!-- horizontal menu top of page -->
 <div th:insert="~{header :: header}"></div>
 
-<h2>Uw wekelijkse beschikbaarheid</h2>
+<h2 th:align="left" >Uw wekelijkse beschikbaarheid</h2>
 <p>Geef hieronder uw per dag aan welke dag delen u beschikbaar bent</p>
 
 
 <form>
 
-<script language="JavaScript">
-    function toggle(source) {
-    checkboxes = document.getElementsByName('day');
-    for(var i=0, n=checkboxes.length;i<n;i++) {
-    checkboxes[i].checked = source.checked;
-    }
-    }
-</script>
+<!--    <input type="checkbox" onClick="selectAll()"> Selecteer alle dagen<br><br>-->
 
 
-    <input type="checkbox" onClick="toggle(this)"> Selecteer alle dagen<br/>
+    <input type="checkbox" onClick="selectAll();"> Selecteer alle dagen<br><br>
 
 <!--    <br>-->
 <!--    <input type="checkbox" name="day" value="monday1">maandag ochtend-->
@@ -49,40 +74,50 @@
 <!--    <input type="checkbox" name="day" value="friday3">vrijdag avond-->
 <!--    <br><br>-->
 
-    <table>
-        <tr>
-            <th></th>
-            <th>maandag</th>
-            <th>dinsdag</th>
-            <th>woensdag</th>
-            <th>donderdag</th>
-            <th>vrijdag</th>
-        </tr>
-        <tr>
-            <th>Ochtend</th>
-            <td><input type="checkbox" name="day" value="monday1"></td>
-            <td><input type="checkbox" name="day" value="tuesday1"></td>
-            <td><input type="checkbox" name="day" value="wednesday1"></td>
-            <td><input type="checkbox" name="day" value="thursday1"></td>
-            <td><input type="checkbox" name="day" value="friday1"></td>
-        </tr>
-        <tr>
-            <th>Middag</th>
-            <td><input type="checkbox" name="day" value="tuesday2"></td>
-            <td><input type="checkbox" name="day" value="tuesday2"></td>
-            <td><input type="checkbox" name="day" value="wednesday2"></td>
-            <td><input type="checkbox" name="day" value="thursday2"></td>
-            <td><input type="checkbox" name="day" value="friday2"></td>
-        </tr>
-        <tr>
-            <th>Avond</th>
-            <td><input type="checkbox" name="day" value="monday3"></td>
-            <td><input type="checkbox" name="day" value="tuesday3"></td>
-            <td><input type="checkbox" name="day" value="wednesday3"></td>
-            <td><input type="checkbox" name="day" value="thursday3"></td>
-            <td><input type="checkbox" name="day" value="friday3"></td>
-        </tr>
-    </table>
+
+        <table id = "t1" align="center">
+            <tr>
+                <th></th>
+                <th>maandag</th>
+                <th>dinsdag</th>
+                <th>woensdag</th>
+                <th>donderdag</th>
+                <th>vrijdag</th>
+            </tr>
+            <tr>
+                <th>
+                    <p>Ochtend</p>
+                    <p>9:00-12:30</p>
+                </th>
+                <td name="day" value="monday1"></td>
+                <td name="day" value="tuesday1"></td>
+                <td name="day" value="wednesday1"></td>
+                <td name="day" value="thursday1"></td>
+                <td name="day" value="friday1"></td>
+            </tr>
+            <tr>
+                <th>
+                    <p>Middag</p>
+                    <p>13:00-17:30</p>
+                </th>
+                <td name="day" value="tuesday2"></td>
+                <td name="day" value="tuesday2"></td>
+                <td name="day" value="wednesday2"></td>
+                <td name="day" value="thursday2"></td>
+                <td name="day" value="friday2"></td>
+            </tr>
+            <tr>
+                <th>
+                    <p>Avond</p>
+                    <p>18:00-21:00</p>
+                </th>
+                <td name="day" value="monday3"></td>
+                <td name="day" value="tuesday3"></td>
+                <td name="day" value="wednesday3"></td>
+                <td name="day" value="thursday3"></td>
+                <td name="day" value="friday3"></td>
+            </tr>
+        </table><br>
 
     <input type="submit" onclick="alert ('Uw wekelijkse beschikbaarheid is opgeslagen in de database')" value="Opslaan">
 
@@ -90,28 +125,61 @@
     <p>Geef hieronder uw incidentele afwezigheid door</p>
     Afwezig:
     <input type="date" name="incident">
-    <table>
+
+    <br><br>
+    <table id = "t2" align="center">
         <tr>
-            <th></th>
-            <th>ochtend</th>
-            <th>middag</th>
-            <th>avond</th>
+            <th name="day" value="morning">ochtend</th>
+            <th name="day" value="afternoon">middag</th>
+            <th name="day" value="evening">avond</th>
         </tr>
-        <tr>
-            <td></td>
-            <td><input type="checkbox" name="day" value="morning"></td>
-            <td><input type="checkbox" name="day" value="afternoon"></td>
-            <td><input type="checkbox" name="day" value="evening"></td>
-        </tr>
-    </table>
+    </table><br>
+
     <input type="submit" onclick="alert ('Uw afwezigheid is doorgegeven aan de database')" value="Doorgeven">
 </form>
-<br><br>
-<form action="/">
-<button>Hoofdmenu</button>
+
+    <script language="JavaScript">
+        // function toggle(source) {
+        //     checkboxes = document.getElementsByName('day');
+        //     for(var i=0, n=checkboxes.length;i<n;i++) {
+        //         checkboxes[i].checked = source.checked;
+        //     }
+        // }
+
+        function selectAll() {
+            var cell = document.querySelector('table#t1');
+            var checkBoxes = document.getElementsByName('day');
 
 
-<!--</form>-->
+            //
+            // if (cell.tagName === 'TH') {
+            //     cell.classList.toggle('checked');
+            // }
+            for(var i=0; i < checkboxes.length; i++){
+                checkBoxes[i].addEventListener(this, function (ev) {
+                    if (ev.target.tagName === 'TD') {
+                        ev.target.classList.toggle('checked');}
+                }, false);
+            }
+        }
+
+        var cell1 = document.querySelector('table#t1');
+        cell1.addEventListener('click', function(ev) {
+            if (ev.target.tagName === 'TD') {
+                ev.target.classList.toggle('checked');
+            }
+        }, false);
+
+        var cell2 = document.querySelector('table#t2');
+        cell2.addEventListener('click', function(ev) {
+            if (ev.target.tagName === 'TH') {
+                ev.target.classList.toggle('checked');
+            }
+        }, false);
+
+
+    </script>
+
 
 <!--<br><br>-->
 <!--<form>-->
@@ -124,8 +192,5 @@
 <!--        </li>-->
 <!--    </ul>-->
 <!--</form>-->
-
-
-
 </body>
 </html>
