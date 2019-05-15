@@ -3,7 +3,6 @@ package makeitwork.mijninzet.controller;
 
 import makeitwork.mijninzet.model.DayPart;
 import makeitwork.mijninzet.model.GlobalAvalability;
-import makeitwork.mijninzet.model.Voorkeur;
 import makeitwork.mijninzet.model.forms.AvalabilityForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

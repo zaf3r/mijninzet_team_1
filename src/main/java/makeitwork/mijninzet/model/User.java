@@ -3,11 +3,14 @@ package makeitwork.mijninzet.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "gebruiker")
 public class User {
+
 
     //Validation fields
     @Transient
@@ -30,6 +33,7 @@ public class User {
     @Transient
     private final String COLUMN_ACTIVE = "actief";
 
+
     //Constant variables that represent other table names/columns
     @Transient
     private final String JOINT_TABLE_NAME = "rollen_gebruiker";
@@ -40,7 +44,7 @@ public class User {
 
     //Fields that are mapped by Hibernate
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "idgebruiker")
     private int id;
 
@@ -57,6 +61,8 @@ public class User {
     @Column(name = COLUMN_ACTIVE)
     private int active;
 
+    @OneToMany(mappedBy = "user",cascade= CascadeType.ALL)
+    private Set<Preference> preferenceSet =  new HashSet<>();
 
     @ManyToMany(fetch = FetchType.EAGER, cascade= {CascadeType.PERSIST, CascadeType.MERGE,
             CascadeType.DETACH, CascadeType.REFRESH})
@@ -106,5 +112,13 @@ public class User {
 
     public void setActive(int active) {
         this.active = active;
+    }
+
+    public Set<Preference> getPreferenceSet() {
+        return preferenceSet;
+    }
+
+    public void setPreferenceSet(Set<Preference> preferenceSet) {
+        this.preferenceSet = preferenceSet;
     }
 }
