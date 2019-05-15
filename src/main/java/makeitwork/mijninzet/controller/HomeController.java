@@ -41,4 +41,7 @@ public class HomeController {
 
     @GetMapping("/globalAvalability")
     public String addAvalability(Model model) { return "globalAvalability"; }
+
+    @GetMapping("/teacher")
+    public String addPreferance(Model model) { return "voorkeur-vakken"; }
 }
