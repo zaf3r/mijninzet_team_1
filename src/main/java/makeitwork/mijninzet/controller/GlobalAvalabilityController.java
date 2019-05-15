@@ -23,61 +23,63 @@ public class GlobalAvalabilityController {
         ModelAndView model = new ModelAndView("AvalabilityForm");
         return model;
     }
-
-    @RequestMapping(name = "/submitAvalabilityForm.html", method = RequestMethod.POST)
-    public ModelAndView submitAvalabilityForm()
-    ModelAndView model = new ModelAndView(      @RequestParam("monday1") boolean MaMoAv,
-                                                @RequestParam("monday2") boolean MaAfAv,
-                                                @RequestParam("monday3") boolean MaEvAv,
-
-                                                @RequestParam("tuesday1") boolean TuMoAv,
-                                                @RequestParam("tuesday2") boolean TuAfAv,
-                                                @RequestParam("tuesday3") boolean TuEvAv,
-
-                                                @RequestParam("wednesday1") boolean WeMoAv,
-                                                @RequestParam("wednesday2") boolean WeAfAv,
-                                                @RequestParam("wednesday3") boolean WeEvAv,
-
-                                                @RequestParam("thursday1") boolean ThMoAv,
-                                                @RequestParam("thursday2") boolean ThAfAv,
-                                                @RequestParam("thursday3") boolean ThEvAv,
-
-                                                @RequestParam("friday") boolean FrMoAv,
-                                                @RequestParam("friday") boolean FrAfAv,
-                                                @RequestParam("friday") boolean FrEvAv)
-
-    {
-        ModelAndView model = new ModelAndView("Avalability Submitted");
-        model.addObject("iets");
-
-            // Linus: voor elke dag of dagdeel een setter van de boolean
-          //  algemeneWeek.getDag(dagnaam "hsdhid").setOchtend(MaMoAv);
-
-         //   GlobalAvalability.isAvalable(1, 1).setAvalabilities(MaAfAv);
-    }
-        return model;
-
-
-    @RequestMapping(name = "/incidentForm.html", method = RequestMethod.GET)
-    public ModelAndView getIncidentForm() {
-        ModelAndView model = new ModelAndView("IncidentForm");
-        return model;
-    }
-
-    @RequestMapping(name = "/submitIncidentForm.html", method = RequestMethod.POST)
-    public ModelAndView submitIncidentForm() {
-        ModelAndView model = new ModelAndView(  @RequestParam("date") Date dateIncident,
-                                                @RequestParam("morning") boolean morningNotAvalable,
-                                                @RequestParam("afternoon") boolean AfternoonNotAvalable,
-                                                @RequestParam("evening") boolean EveningNotAvalable)
-        {
-            ModelAndView model = new ModelAndView("Incident Submitted");
-            model.addObject("iets");
-        }
-        return model;
-
-    }
+//
+//    @RequestMapping(name = "/submitAvalabilityForm.html", method = RequestMethod.POST)
+//    public ModelAndView submitAvalabilityForm()
+//    ModelAndView model = new ModelAndView(      @RequestParam("monday1") boolean MaMoAv,
+//                                                @RequestParam("monday2") boolean MaAfAv,
+//                                                @RequestParam("monday3") boolean MaEvAv,
+//
+//                                                @RequestParam("tuesday1") boolean TuMoAv,
+//                                                @RequestParam("tuesday2") boolean TuAfAv,
+//                                                @RequestParam("tuesday3") boolean TuEvAv,
+//
+//                                                @RequestParam("wednesday1") boolean WeMoAv,
+//                                                @RequestParam("wednesday2") boolean WeAfAv,
+//                                                @RequestParam("wednesday3") boolean WeEvAv,
+//
+//                                                @RequestParam("thursday1") boolean ThMoAv,
+//                                                @RequestParam("thursday2") boolean ThAfAv,
+//                                                @RequestParam("thursday3") boolean ThEvAv,
+//
+//                                                @RequestParam("friday") boolean FrMoAv,
+//                                                @RequestParam("friday") boolean FrAfAv,
+//                                                @RequestParam("friday") boolean FrEvAv)
+//
+//    {
+//        ModelAndView model = new ModelAndView("Avalability Submitted");
+//        model.addObject("iets");
+//
+//            // Linus: voor elke dag of dagdeel een setter van de boolean
+//          //  algemeneWeek.getDag(dagnaam "hsdhid").setOchtend(MaMoAv);
+//
+//         //   GlobalAvalability.isAvalable(1, 1).setAvalabilities(MaAfAv);
+//    }
+//        return model;
+//
+//
+//    @RequestMapping(name = "/incidentForm.html", method = RequestMethod.GET)
+//    public ModelAndView getIncidentForm() {
+//        ModelAndView model = new ModelAndView("IncidentForm");
+//        return model;
+//    }
+//
+//    @RequestMapping(name = "/submitIncidentForm.html", method = RequestMethod.POST)
+//    public ModelAndView submitIncidentForm() {
+//        ModelAndView model = new ModelAndView(  @RequestParam("date") Date dateIncident,
+//                                                @RequestParam("morning") boolean morningNotAvalable,
+//                                                @RequestParam("afternoon") boolean AfternoonNotAvalable,
+//                                                @RequestParam("evening") boolean EveningNotAvalable)
+//        {
+//            ModelAndView model = new ModelAndView("Incident Submitted");
+//            model.addObject("iets");
+//        }
+//        return model;
+//
+//    }
 }
+
+//tot hier gewerkt
 
 
 //    @GetMapping("dayParts")
