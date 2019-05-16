@@ -1,9 +1,6 @@
 body {
     font-family: "Times New Roman", Times, sans-serif;
-    background: #43cea2;
-    background: -webkit-linear-gradient(to right, #185a9d, #43cea2);
-    background: linear-gradient(to right, #185a9d, #43cea2);
-    color: #fff;
+    color: #5d4b79;
     text-align: center;
 }
 
@@ -22,7 +19,7 @@ h1 {
     margin-bottom: 10px;
 }
 h2 {
-    font-size: 46px;
+    font-size: 24px;
     margin-top: 10px;
     margin-bottom: 10px;
 }

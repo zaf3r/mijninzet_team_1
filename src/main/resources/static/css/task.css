@@ -1,5 +1,4 @@
 
-
 div#main {
 }
 
@@ -82,14 +81,14 @@ input[type=submit]:hover{
 }
 
 .extraInfo {
-    border-right-color: grey;
-    border-left-color: grey;
-    background-color: lightgrey;
+    background-color: ivory;
     height: 70px;
     width: 65%;
     margin: 0 auto;
     border-left: solid;
     border-right: solid;
+    border-right-color: grey;
+    border-left-color: grey;
 }
 
 .tekst {
@@ -102,6 +101,7 @@ input[type=submit]:hover{
 
 h1 {
     padding: 5px;
+    text-align: center;
 }
 
 p {

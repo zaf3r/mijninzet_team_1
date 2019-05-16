@@ -8,24 +8,15 @@
 </head>
 <body>
 <!--menu aan bovenzijde pagina-->
-    <div th:fragment="header" th:align="left">
+    <div th:fragment="header" th:align="right">
         <div class="navbar">
+            <img src="https://www.it-omscholing.nl/files/logo.png" width="75" height="60" alt="logo Make IT Work" align="left" class="logo">
             <ul>
                 <li><a href="/">Home</a> </li>
-                <li><a href="/globalAvalability">Beschik baarheid</a></li>
+                <li><a href="/globalAvalability">Beschikbaarheid</a></li>
                 <li><a href="/addUser">Nieuwe gebruiker</a></li>
                 <li><a href="/teacher/preference">Voorkeur</a></li>
-                <li><a href="/addUser">Link 3</a></li>
-                <li>
-                    <div class="dropdown">
-                        <button class="dropbtn">Vacature</button>
-                        <div class="dropdown-content">
-                            <a href="/jammerdan">Mijn voorkeur</a>
-                            <a href="/jammerdan">invoeren</a>
-                            <a href="/jammerdan">verwijderen</a>
-                        </div>
-                    </div>
-                </li>
+                <li><a href="/taskOverview">Vacatures</a></li>
             </ul>
         </div>
     </div>

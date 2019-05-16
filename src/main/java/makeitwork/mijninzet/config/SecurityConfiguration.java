@@ -49,7 +49,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin().permitAll();
+                .formLogin()
+                .permitAll()
+                .and()
+                .logout()
+                .permitAll();
+
     }
 
     @Bean
