@@ -6,8 +6,6 @@ import org.bson.types.ObjectId;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
-import java.util.List;
 
 @Component
 public class DBSeeder implements CommandLineRunner {

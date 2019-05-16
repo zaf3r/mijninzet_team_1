@@ -2,7 +2,6 @@ package makeitwork.mijninzet.repository;
 
 
 import makeitwork.mijninzet.model.Task;
-import org.aspectj.weaver.AnnotationTargetKind;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

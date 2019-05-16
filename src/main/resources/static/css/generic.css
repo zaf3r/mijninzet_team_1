@@ -52,3 +52,6 @@ input[type=button]{
     collapse: true;
     cursor: pointer;
 }
+input[type=checkbox]{
+    float: none;
+}
