@@ -16,17 +16,14 @@
             color: #185a9d;
             background-color: #ffffb3;
         }
-        td { background-color: coral; }
+        td { background-color: #3e8e41; }
         table, th, td {
             font-family: arial, sans-serif;
             border: 1px solid black;
         }
-        table#t1 tr td.checked {
-            background: #3e8e41;
-        }
-        table#t2 tr th.checked{
-            background: coral;
-        }
+        table#t1 tr td.checked {background: coral;}
+        table#t2 tr th{background: coral;}
+        table#t2 tr th.checked{background: #ffffb3;}
     </style>
 
 </head>
@@ -137,10 +134,11 @@
         console.log(cell2.firstChild.value);
     }, false);
 
-    function toggle(source) {
-        hidden = document.getElementsByClassName('checked');
-        for (var i = 0, n = hidden.length; i < n; i++) {
-            hidden[i].checked = source.checked;
+    //function toggle(source) {
+    function selectAll() {
+        var cell = document.querySelector('table#t1').getElementsByClassName('checked');
+        for (var i = 0, n = cell.length; i < n; i++) {
+            cell[i].classList.toggle('checked');
         }
     }
 
