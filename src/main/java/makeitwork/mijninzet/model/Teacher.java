@@ -1,9 +1,7 @@
 package makeitwork.mijninzet.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="docentt")
@@ -14,8 +12,14 @@ public class Teacher {
     @Column(name="idGebruiker")
     private int id;
 
-    //Hybernate mapping of the tables 2× @ManyToOne with IncidentalAvalability & GlobalAvalability
+    @Transient
+    private List<Teacher> teachers;
 
+    //Hybernate mapping of the tables 2× @ManyToOne with IncidentalAvalability & GlobalAvalability
+    @ManyToOne
+    @JoinColumn(name="dayParts")
+    @JoinColumn(name="incidenten")
+    public List<Teacher> getTeachers() { return teachers; }
 
     //no-args
     public Teacher() { }

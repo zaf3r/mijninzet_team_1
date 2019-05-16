@@ -2,6 +2,7 @@ package makeitwork.mijninzet.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table (name ="incidentele_beschikbaarheid")
@@ -18,7 +19,13 @@ public class IncidentalAvalability {
     @Column(name="idGebruiker")
     private int id;
 
-    //Hybernate mapping of the tables 1× @OneToMany with Docent
+    @Transient
+    private List<IncidentalAvalability> incidenten;
+
+    //Hybernate mapping of the tables 1× @OneToMany with Teacher
+    @OneToMany(targetEntity = Teacher.class, mappedBy = "teachers",
+            cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    public List<IncidentalAvalability> getIncidenten() { return incidenten; }
 
     //no-arg
     public IncidentalAvalability () {}
