@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<link rel="stylesheet" type="text/css" th:href="@{/css/generic.css}"/>
+<link rel="stylesheet" type="text/css" th:href="@{/css/header.css}"/>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- horizontal menu top of page -->
+<div th:insert="~{header :: header}"></div>
+
+<h2>Uw wekelijkse beschikbaarheid</h2>
+<p>Geef hieronder uw per dag aan welke dag delen u beschikbaar bent</p>
+
+
+<form>
+
+<script language="JavaScript">
+    function toggle(source) {
+    checkboxes = document.getElementsByName('dag');
+    for(var i=0, n=checkboxes.length;i<n;i++) {
+    checkboxes[i].checked = source.checked;
+    }
+    }
+</script>
+
+
+    <input type="checkbox" onClick="toggle(this)" /> Selecteer alle dagen<br/>
+    <br>
+    <input type="checkbox" name="dag" value="maandag1">maandag ochtend
+    <input type="checkbox" name="dag" value="dinsdag1">dinsdag ochtend
+    <input type="checkbox" name="dag" value="woensdag1">woensdag ochtend
+    <input type="checkbox" name="dag" value="donderdag1">donderdag ochtend
+    <input type="checkbox" name="dag" value="vrijdag1">vrijdag ochtend
+    <br>
+    <input type="checkbox" name="dag" value="maandag2">maandag middag
+    <input type="checkbox" name="dag" value="dinsdag2">dinsdag middag
+    <input type="checkbox" name="dag" value="woensdag2">woensdag middag
+    <input type="checkbox" name="dag" value="donderdag2">donderdag middag
+    <input type="checkbox" name="dag" value="vrijdag2">vrijdag middag
+    <br>
+    <input type="checkbox" name="dag" value="maandag3">maandag avond
+    <input type="checkbox" name="dag" value="dinsdag3">dinsdag avond
+    <input type="checkbox" name="dag" value="woensdag3">woensdag avond
+    <input type="checkbox" name="dag" value="donderdag3">donderdag avond
+    <input type="checkbox" name="dag" value="vrijdag3">vrijdag avond
+    <br><br>
+    <input type="submit" onclick="alert ('Uw wekelijkse beschikbaarheid is opgeslagen in de database')" value="Opslaan">
+
+    <br><br>
+    <p>Geef hieronder uw incidentele afwezigheid door</p>
+    Afwezig:
+    <input type="date" name="incident">
+    <input type="submit" onclick="alert ('Uw afwezigheid is doorgegeven aan de database')" value="Doorgeven">
+</form>
+<br><br>
+<form action="/">
+<button>Hoofdmenu</button>
+</form>
+</body>
+</html>

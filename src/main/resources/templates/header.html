@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:padding="http://www.w3.org/1999/xhtml"
+      xmlns:margin="http://www.w3.org/1999/xhtml" xmlns:list-style-type="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<link rel="stylesheet" type="text/css" th:href="@{/css/header.css}"/>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<!--menu aan bovenzijde pagina-->
+    <div th:fragment="header" th:align="left">
+        <div class="navbar">
+            <ul>
+                <li><a href="/">Home</a> </li>
+                <li><a href="/globalAvalability">Beschik baarheid</a></li>
+                <li><a href="/addUser">Nieuwe gebruiker</a></li>
+                <li><a href="/">link 2</a></li>
+                <li><a href="/addUser">Link 3</a></li>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Vacature</button>
+                        <div class="dropdown-content">
+                            <a href="/jammerdan">Mijn voorkeur</a>
+                            <a href="/jammerdan">invoeren</a>
+                            <a href="/jammerdan">verwijderen</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
