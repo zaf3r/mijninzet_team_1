@@ -7,6 +7,8 @@ public class PreferenceForm {
 
     private List<Integer> preferenceRating;
 
+    private Set<Preference> preferenceSet;
+
     public PreferenceForm(){
     }
 
@@ -20,5 +22,13 @@ public class PreferenceForm {
 
     public void setPreferenceRating(List<Integer> preferenceRating) {
         this.preferenceRating = preferenceRating;
+    }
+
+    public Set<Preference> getPreferenceSet() {
+        return preferenceSet;
+    }
+
+    public void setPreferenceSet(Set<Preference> preferenceSet) {
+        this.preferenceSet = preferenceSet;
     }
 }

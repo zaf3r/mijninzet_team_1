@@ -1,6 +1,7 @@
 package makeitwork.mijninzet.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Entity
@@ -20,6 +21,7 @@ public class Preference implements Serializable {
     @JoinColumn(name = "idgebruiker")
     private User user;
 
+    @NotNull
     @Column(name = "voorkeur")
     private int preference;
 
